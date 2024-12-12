@@ -8,11 +8,39 @@
 import SwiftUI
 
 struct HeaderView: View {
+    let title: String
+    let subtitle: String
+    let startlocation: UnitPoint
+    let endLocation: UnitPoint
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Capsule()
+                .fill(LinearGradient(
+                gradient: Gradient(colors: [Color.green.opacity(0.5), Color.green]),
+                startPoint: startlocation,
+                endPoint: endLocation
+            ))
+                .frame(width: UIScreen.main.bounds.width * 1.5, height: 400)
+                .rotationEffect(Angle(degrees: 90))
+                .offset(y: -300)
+            
+            VStack{
+                Text(title)
+                    .font(.system(size: 40))
+                    .foregroundColor(Color.white)
+                    .bold()
+                Text(subtitle)
+                    .font(.system(size: 30))
+                    .foregroundColor(Color.white)
+                    .italic()
+                    .padding(.bottom, 300)
+            }
+            
+        }
     }
 }
 
 #Preview {
-    HeaderView()
+    HeaderView(title: "Welcome to Gymito", subtitle: "Track your workouts", startlocation: .leading, endLocation: .trailing)
 }
