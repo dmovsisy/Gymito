@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @StateObject var viewModel = ProfileViewViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                ButtonView(title: "sign out", startLocation: .top, endLocation: .bottom){
+                    viewModel.signOut();
+                }
+            }
+            .navigationTitle("profile")
+        }
+        
     }
 }
 

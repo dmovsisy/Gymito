@@ -8,11 +8,34 @@
 import SwiftUI
 
 struct ExerciseListView: View {
+    @StateObject var viewmodel = ExerciseListViewViewModel()
+    
+    private let userId: String
+    
+    init(userId: String){
+        self.userId = userId
+    }
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            
+            VStack {
+                
+            }
+            .navigationTitle("exercise list")
+            .toolbar {
+                Button {
+                    // New exercise for exercise list
+                } label: {
+                    Image(systemName:  "plus")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                }
+            }
+        }
+        
     }
 }
 
 #Preview {
-    ExerciseListView()
+    ExerciseListView(userId: "")
 }
