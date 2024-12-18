@@ -8,6 +8,7 @@
 import Foundation
 
 class CalendarViewViewModel: ObservableObject {
+    @Published var selectedDate = Date()
     init(){
         
     }

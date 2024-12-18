@@ -9,8 +9,12 @@ import FirebaseAuth
 import Foundation
 
 class ExerciseListViewViewModel: ObservableObject {
- 
+    @Published var showingNewExerciseView = false
     init(){
+        
+    }
+    
+    func delete(id: String){
         
     }
 }
