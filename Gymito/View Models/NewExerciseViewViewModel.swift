@@ -21,8 +21,8 @@ class NewExerciseViewViewModel: ObservableObject {
     @Published  var searchText = ""
     
 
-    let options = ["Apple", "Banana", "Orange", "Mango", "Pineapple", "Grapes"]
-    
+    let options = workoutOptions
+    /*
     let optionImages: [String: String] = [
         "Apple": "figure.strengthtraining.traditional",      // Use system images or your own asset names
         "Banana": "leaf.fill",
@@ -30,6 +30,7 @@ class NewExerciseViewViewModel: ObservableObject {
         "Mango": "star.fill",
         "Pineapple": "crown.fill",
         "Grapes": "drop.fill"]
+     */
     
     var filteredOptions: [String] {
         if searchText.isEmpty {

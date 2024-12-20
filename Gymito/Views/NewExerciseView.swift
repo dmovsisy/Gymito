@@ -47,16 +47,18 @@ struct NewExerciseView: View {
                             ForEach(viewModel.filteredOptions, id: \.self) { option in
                                 HStack {
                                     // Add an image corresponding to the option
+                                    /*  Add images later
                                     if let imageName = viewModel.optionImages[option] {
                                         Image(systemName: imageName)
                                             .foregroundColor(.green) // Customize color if needed
                                     }
+                                     */
                                     Text(option)
                                 }
                                             .padding()
                                         .onTapGesture {
                                             viewModel.selectedOption = option
-                                            viewModel.selectedImage = viewModel.optionImages[option]
+                                    //        viewModel.selectedImage = viewModel.optionImages[option]
                                             viewModel.isExpanded = false
                                 }
                             }

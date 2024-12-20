@@ -14,5 +14,4 @@ struct User: Codable{
     let timeJoined: TimeInterval
     let workoutId: String
     let currentlyWorkingOut: Bool
-    
 }
