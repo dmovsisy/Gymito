@@ -19,14 +19,13 @@ struct HomeView: View {
     @ViewBuilder
     var accountView: some View {
         TabView {
-            CalendarView()
-                .tabItem{
-                    Label("choose date", systemImage: "calendar")
-                }
-            ExerciseListView(userId: viewModel.currentUserId)
+            StartWorkoutView()
                 .tabItem {
-                    Label(viewModel.getTodaysDate(), systemImage: "house")
-
+                    Label("current workout", systemImage: "figure.strengthtraining.traditional")
+                }
+            WorkoutListView(userId: viewModel.currentUserId)
+                .tabItem{
+                    Label("past workouts", systemImage: "calendar")
                 }
             ProfileView()
                 .tabItem{

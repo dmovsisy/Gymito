@@ -102,7 +102,6 @@ struct NewExerciseView: View {
                     .padding()
                 }
                 
-                
                 // Button
                 ButtonView(title: "save", startLocation: .trailing, endLocation: .leading) {
                     //action

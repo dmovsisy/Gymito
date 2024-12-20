@@ -9,3 +9,4 @@ import Foundation
 
 // Global Variable
 var selectedDate: String = ""
+// var currentlyWorkingOut: Bool =

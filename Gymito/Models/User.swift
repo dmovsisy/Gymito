@@ -12,4 +12,7 @@ struct User: Codable{
     let name: String
     let email: String
     let timeJoined: TimeInterval
+    let workoutId: String
+    let currentlyWorkingOut: Bool
+    
 }

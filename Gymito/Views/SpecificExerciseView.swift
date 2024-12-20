@@ -27,15 +27,15 @@ struct SpecificExerciseView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             
-            Button {
-                // go to edit screen
+          /*  Button {
+                 go to edit screen
+                viewModel.toggleisCurrent(item: item)
             } label: {
                 Image(systemName: "pencil")
-                    .foregroundColor(.green)
-            }
+                   .foregroundColor(.green)
+          */  }
         }
     }
-}
 
 #Preview {
     //SpecificExerciseView()
