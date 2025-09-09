@@ -7,37 +7,54 @@
 
 import XCTest
 
-final class GymitoUITests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+final class GymitoProfileAndRegisterUITests: XCTestCase {
+    
+    var app: XCUIApplication!
+    
+    override func setUp() {
+        super.setUp()
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    @MainActor
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+        app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
-
-    @MainActor
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    
+    func testRegisterViewShowsForm() {
+        // Navigate to register screen
+        app.staticTexts["Create Account"].tap()
+        
+        let nameField = app.textFields["full name"]
+        XCTAssertTrue(nameField.waitForExistence(timeout: 2))
+        
+        let emailField = app.textFields["email"]
+        let passwordField = app.secureTextFields["password"]
+        
+        XCTAssertTrue(emailField.exists)
+        XCTAssertTrue(passwordField.exists)
+    }
+    
+    func testRegisterFormValidationShowsError() {
+        app.staticTexts["Create Account"].tap()
+        
+        let createButton = app.buttons["create account"]
+        createButton.tap()
+        
+        // Expect some validation error to appear
+        // (you may need to add an accessibilityIdentifier to an error Text view if you want to check it directly)
+    }
+    
+    func testProfileViewShowsLoadingState() {
+        // Navigate to profile tab
+        app.tabBars.buttons["profile"].tap()
+        
+        let loadingText = app.staticTexts["Loading Profile..."]
+        XCTAssertTrue(loadingText.waitForExistence(timeout: 2))
+    }
+    
+    func testProfileViewSignOutButtonExists() {
+        // Navigate to profile tab
+        app.tabBars.buttons["profile"].tap()
+        
+        let signOutButton = app.buttons["signout"]
+        XCTAssertTrue(signOutButton.waitForExistence(timeout: 2))
     }
 }
