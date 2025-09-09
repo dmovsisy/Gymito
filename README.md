@@ -27,7 +27,7 @@ email: dmovsisy@uwaterloo.ca
 
 ## Video Walkthrough
 
-[Watch Gymito Walkthrough](Gymito_Walkthrough.mp4)
+[Watch Gymito Walkthrough](https://www.youtube.com/watch?v=701bD0_qseI)
 
 ### Video Transcript
 
