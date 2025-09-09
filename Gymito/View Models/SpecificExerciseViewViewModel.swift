@@ -13,7 +13,7 @@ import Foundation
 class SpecificExerciseViewViewModel: ObservableObject{
     
     func toggleisCurrent(item: ExerciseListItem){
-        var itemCopy = item
+        let itemCopy = item
       //  itemCopy.setDone(!item.isCurrent)
         
         guard let uid = Auth.auth().currentUser?.uid else {

@@ -44,15 +44,12 @@ struct LoginView: View {
                 .offset(y:-100)
                 Spacer()
                 //Create Account
-                VStack{
-                    Text("Don't have an account? Make one!")
-                        
-                    NavigationLink("Create Account", destination: RegisterView())
-                    }
-                }
-                .padding(.bottom, 50)
-                Spacer()
-            
+                Text("Don't have an account? Make one!")
+                
+                NavigationLink("Create Account", destination: RegisterView())
+            }
+            .padding(.bottom, 50)
+            Spacer()
         }
     }
 }
